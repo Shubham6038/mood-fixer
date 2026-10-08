@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Gentle Reminder for Divyanshi</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>For My Bestie Divyanshi ❤️</title>
+    <!-- Cute Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            --card-bg: rgba(255, 255, 255, 0.90);
-            --primary: #4a5568;
-            --accent: #6b46c1;
-            --accent-hover: #553c9a;
+            --bg-gradient: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+            --card-bg: rgba(255, 255, 255, 0.92);
+            --primary-color: #ff4b2b;
+            --secondary-color: #ff416c;
             --text-main: #2d3748;
             --text-muted: #718096;
-            --shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+            --shadow: 0 20px 50px rgba(255, 75, 43, 0.15);
         }
 
         * {
@@ -24,7 +24,7 @@
         }
 
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: 'Poppins', sans-serif;
             background: var(--bg-gradient);
             min-height: 100vh;
             display: flex;
@@ -36,38 +36,36 @@
 
         .wrapper {
             width: 100%;
-            max-width: 600px;
+            max-width: 500px;
             padding: 20px;
         }
 
         .card-container {
             background: var(--card-bg);
             backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.5);
+            border: 2px solid rgba(255, 255, 255, 0.8);
             border-radius: 24px;
             box-shadow: var(--shadow);
-            padding: 40px;
+            padding: 35px;
             text-align: center;
             position: relative;
-            overflow: hidden; /* Zaruri hai animation ke liye */
+            overflow: hidden;
         }
 
-        /* --- KEYFRAME ANIMATIONS --- */
-        @keyframes slideUpFade {
-            from {
+        /* Smooth Slide and Fade Animation */
+        @keyframes popUp {
+            0% {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: scale(0.95) translateY(20px);
             }
-            to {
+            100% {
                 opacity: 1;
-                transform: translateY(0);
+                transform: scale(1) translateY(0);
             }
         }
 
-        /* Initial Page Load Animation */
         .card-container {
-            animation: slideUpFade 0.7s ease-out forwards;
+            animation: popUp 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
         }
 
         .page {
@@ -75,43 +73,40 @@
             width: 100%;
         }
 
-        /* Jab class 'active' lagegi, tab ye animation chalegi */
         .page.active {
             display: block;
-            animation: slideUpFade 0.5s ease-in-out forwards;
+            animation: popUp 0.5s ease-in-out forwards;
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 700;
-            color: var(--text-main);
-            margin-bottom: 12px;
-            letter-spacing: -0.5px;
+            color: var(--primary-color);
+            margin-bottom: 10px;
         }
 
         .subtitle {
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: var(--text-muted);
-            margin-bottom: 30px;
-            line-height: 1.6;
-            font-weight: 400;
+            margin-bottom: 25px;
+            line-height: 1.5;
         }
 
         .content-box {
-            background: rgba(255, 255, 255, 0.7);
-            border-left: 4px solid var(--accent);
-            padding: 24px;
-            border-radius: 12px;
-            margin-bottom: 30px;
+            background: #fff5f5;
+            border-left: 4px solid var(--primary-color);
+            padding: 20px;
+            border-radius: 14px;
+            margin-bottom: 25px;
             text-align: left;
-            box-shadow: inset 0 1px 3px rgba(0,0,0,0.03);
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.02);
         }
 
         .content-box p {
-            font-size: 0.95rem;
+            font-size: 0.92rem;
             line-height: 1.7;
             color: var(--text-main);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .content-box p:last-child {
@@ -120,86 +115,71 @@
 
         .btn-group {
             display: flex;
-            gap: 12px;
+            gap: 10px;
             justify-content: center;
             flex-wrap: wrap;
-            margin-top: 20px;
+            margin-top: 15px;
         }
 
         .btn {
-            background: var(--accent);
+            background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
             color: white;
             border: none;
-            padding: 12px 24px;
-            border-radius: 12px;
-            font-size: 0.95rem;
+            padding: 12px 22px;
+            border-radius: 30px;
+            font-size: 0.9rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(107, 70, 193, 0.2);
+            box-shadow: 0 4px 15px rgba(255, 75, 43, 0.3);
             text-decoration: none;
-            position: relative;
-            overflow: hidden;
         }
 
         .btn:hover {
-            background: var(--accent-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(107, 70, 193, 0.3);
-        }
-
-        /* Button click ripple effect basic style */
-        .btn:after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 5px;
-            height: 5px;
-            background: rgba(255,255,255,0.5);
-            opacity: 0;
-            border-radius: 100%;
-            transform: scale(1, 1) translate(-50%, -50%);
-            transition: opacity 0.4s, transform 0.5s;
-        }
-
-        .btn:active:after {
-            opacity: 1;
-            transform: scale(0, 0) translate(-50%, -50%);
-            transition: 0s;
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 6px 20px rgba(255, 75, 43, 0.4);
         }
 
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.9);
+            background: #e2e8f0;
             color: var(--text-main);
-            border: 1px solid rgba(0,0,0,0.08);
             box-shadow: none;
         }
 
         .btn-secondary:hover {
-            background: #fff;
-            color: var(--accent);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            background: #cbd5e0;
+            box-shadow: none;
+            color: var(--text-main);
         }
 
-        .interactive-quote {
-            font-style: italic;
+        .cute-quote {
             font-weight: 500;
-            color: var(--accent);
-            min-height: 60px;
+            color: var(--primary-color);
+            min-height: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 20px;
+            font-size: 1rem;
             padding: 0 10px;
-            font-size: 1.1rem;
+            font-style: italic;
         }
 
-        .progress-dots {
+        .heart-beat {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            animation: pulse 1.2s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.15); }
+        }
+
+        .dots {
             display: flex;
             justify-content: center;
-            gap: 8px;
-            margin-top: 30px;
+            gap: 6px;
+            margin-top: 25px;
         }
 
         .dot {
@@ -211,9 +191,9 @@
         }
 
         .dot.active {
-            background: var(--accent);
-            width: 24px;
-            border-radius: 4px;
+            background: var(--primary-color);
+            width: 22px;
+            border-radius: 10px;
         }
     </style>
 </head>
@@ -222,63 +202,69 @@
     <div class="wrapper">
         <div class="card-container">
             
+            <!-- PAGE 1 -->
             <div id="page1" class="page active">
-                <h1>Hi Divyanshi.</h1>
-                <p class="subtitle">I noticed your energy has been a bit heavy lately. Thought I'd share a quiet space to remind you of a few things.</p>
+                <div class="heart-beat">🥺❤️</div>
+                <h1>Hey Divyanshi!</h1>
+                <p class="subtitle">Pata hai tera mood kharab hai, aur sach kahun toh tera ye sad face mujhse bilkul nahi dekha jata.</p>
                 
                 <div class="content-box">
-                    <p>It is completely valid to have rough days. Progress isn't linear, and sometimes things just don't go according to plan.</p>
-                    <p>Whatever is weighing on your mind right now, you don't have to carry it all by yourself.</p>
+                    <p>Chahe kitni bhi badi problem ho, tu akeli nahi hai. Main hamesha tere sath hoon, chahe kuch bhi ho jaye!</p>
+                    <p>Ab thoda sa smile kar de, warna main aise hi pareshan karta rahunga. 🤪</p>
                 </div>
 
                 <div class="btn-group">
-                    <button class="btn" onclick="switchPage(2)">Continue ➔</button>
+                    <button class="btn" onclick="switchPage(2)">Aage toh chal Madam! ➔</button>
                 </div>
 
-                <div class="progress-dots">
+                <div class="dots">
                     <div class="dot active"></div>
                     <div class="dot"></div>
                     <div class="dot"></div>
                 </div>
             </div>
 
+            <!-- PAGE 2 -->
             <div id="page2" class="page">
-                <h1>A Quick Perspective</h1>
-                <p class="subtitle">A brief reminder of your resilience.</p>
+                <div class="heart-beat">✨🙈</div>
+                <h1>Ek Baat Bolun?</h1>
+                <p class="subtitle">Tu duniya ki sabse best bestie hai (thodi si pagal zaroor hai, par best hai)!</p>
                 
                 <div class="content-box">
-                    <p><strong>1. This is temporary:</strong> Heavy moments come and go, but your overall strength remains constant.</p>
-                    <p><strong>2. Focus inward:</strong> Give yourself permission to disconnect from external stressors and just breathe.</p>
-                    <p><strong>3. You're valued:</strong> Your peace of mind matters more than any temporary chaos around you.</p>
+                    <p><strong>1.</strong> Tera gussa karna ya chup ho jana bilkul accha nahi lagta.</p>
+                    <p><strong>2.</strong> Teri saari problems choti hain, aur tu unse bohot badi hai.</p>
+                    <p><strong>3.</strong> Chal ab jaldi se gussa thook de aur dosti pakki kar!</p>
                 </div>
 
                 <div class="btn-group">
-                    <button class="btn btn-secondary" onclick="switchPage(1)">← Back</button>
-                    <button class="btn" onclick="switchPage(3)">Next ➔</button>
+                    <button class="btn btn-secondary" onclick="switchPage(1)">← Peeche</button>
+                    <button class="btn" onclick="switchPage(3)">Aage badho ➔</button>
                 </div>
 
-                <div class="progress-dots">
+                <div class="dots">
                     <div class="dot"></div>
                     <div class="dot active"></div>
                     <div class="dot"></div>
                 </div>
             </div>
 
+            <!-- PAGE 3 -->
             <div id="page3" class="page">
-                <h1>Breathe & Reset</h1>
-                <p class="subtitle">Click below whenever you need a quick mental reset.</p>
+                <div class="heart-beat">🍫🤗</div>
+                <h1>Virtual Treat for You!</h1>
+                <p class="subtitle">Ye le chocolate aur bohot saari tight wali jhappi! Ab toh maan ja yaar.</p>
                 
                 <div class="content-box" style="text-align: center;">
-                    <div id="quoteDisplay" class="interactive-quote">"Peace comes from within. Do not seek it without."</div>
-                    <button class="btn btn-secondary" onclick="generateQuote()" style="font-size: 0.85rem; padding: 8px 16px;">Generate New Thought</button>
+                    <div id="quoteDisplay" class="cute-quote">"Dosti mein no sorry, no thank you... aur no sad mood allowed!"</div>
+                    <button class="btn btn-secondary" onclick="changeQuote()" style="font-size: 0.8rem; padding: 6px 14px; margin-top: 10px;">Aur ek cute line suno 💖</button>
                 </div>
 
                 <div class="btn-group">
-                    <button class="btn btn-secondary" onclick="switchPage(2)">← Back</button>
-                    <button class="btn" onclick="switchPage(1)">↺ Restart</button>
+                    <button class="btn btn-secondary" onclick="switchPage(2)">← Peeche</button>
+                    <button class="btn" onclick="switchPage(1)">Shuru se dekho ↺</button>
                 </div>
 
-                <div class="progress-dots">
+                <div class="dots">
                     <div class="dot"></div>
                     <div class="dot"></div>
                     <div class="dot active"></div>
@@ -289,20 +275,17 @@
     </div>
 
     <script>
-        const quotes = [
-            "“You don't have to see the whole staircase, just take the first step.”",
-            "“Almost everything will work again if you unplug it for a few minutes... including you.”",
-            "“Be gentle with yourself. You are doing the best you can.”",
-            "“This too shall pass. Take a deep breath and exhale the tension.”",
-            "“Your current situation is not your final destination.”",
-            "“Don't let yesterday take up too much of today.”"
+        const cuteLines = [
+            "“Tera mood theek karne ke liye kuch bhi kar sakta hu main! 😄”",
+            "“Smile please! Warna main kal se chocolate nahi share karunga. 🍫”",
+            "“Tu khush rahegi toh duniya thodi aur acchi lagegi yaar! ✨”",
+            "“Chal ab chup chap has de, tera best friend tujhe mana raha hai! 🤭”"
         ];
 
         function switchPage(pageNum) {
             const pages = document.querySelectorAll('.page');
             const dots = document.querySelectorAll('.dot');
             
-            // Pehle saari pages se 'active' hatao aur opacity 0 karo
             pages.forEach(p => {
                 p.classList.remove('active');
                 p.style.display = 'none'; 
@@ -310,29 +293,25 @@
             
             dots.forEach(d => d.classList.remove('active'));
 
-            // Nayi page ko display block karo aur 'active' lagao (animation apne aap chalegi)
             const targetPage = document.getElementById('page' + pageNum);
             targetPage.style.display = 'block';
             
-            // Chhota sa delay taaki display:block render ho jaye aur animation trigger ho
             setTimeout(() => {
                 targetPage.classList.add('active');
-            }, 50);
+            }, 30);
 
-            // Dots update karo
             dots[pageNum - 1].classList.add('active');
         }
 
-        function generateQuote() {
-            const randomIndex = Math.floor(Math.random() * quotes.length);
+        function changeQuote() {
+            const randomLine = cuteLines[Math.floor(Math.random() * cuteLines.length)];
             const quoteElem = document.getElementById('quoteDisplay');
             
-            // Quote change hone par halka fade effect
             quoteElem.style.opacity = 0;
             setTimeout(() => {
-                quoteElem.innerText = quotes[randomIndex];
+                quoteElem.innerText = randomLine;
                 quoteElem.style.opacity = 1;
-            }, 300);
+            }, 250);
         }
     </script>
 
