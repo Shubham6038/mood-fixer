@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A Gentle Reminder for Divyanshi</title>
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -51,29 +50,19 @@
             padding: 40px;
             text-align: center;
             position: relative;
-            animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         .page {
             display: none;
             opacity: 0;
-            transition: opacity 0.4s ease-in-out;
+            transform: translateY(15px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
         }
 
         .page.active {
             display: block;
             opacity: 1;
+            transform: translateY(0);
         }
 
         h1 {
@@ -153,7 +142,6 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
 
-        /* Interactive Elements styling */
         .interactive-quote {
             font-style: italic;
             font-weight: 500;
@@ -164,6 +152,7 @@
             justify-content: center;
             margin-bottom: 20px;
             padding: 0 15px;
+            transition: opacity 0.2s ease;
         }
 
         .progress-dots {
@@ -193,7 +182,6 @@
     <div class="wrapper">
         <div class="card-container">
             
-            <!-- PAGE 1: INTRO / EMPATHY -->
             <div id="page1" class="page active">
                 <h1>Hi Divyanshi.</h1>
                 <p class="subtitle">I noticed your energy has been a bit heavy lately. Thought I'd share a quiet space to remind you of a few things.</p>
@@ -208,13 +196,12 @@
                 </div>
 
                 <div class="progress-dots">
-                    <div class="dot active"></div>
-                    <div class="dot"></div>
-                    <div class="dot"></div>
+                    <div class="dot active" id="dot1"></div>
+                    <div class="dot" id="dot2"></div>
+                    <div class="dot" id="dot3"></div>
                 </div>
             </div>
 
-            <!-- PAGE 2: PERSPECTIVE / REASSURANCE -->
             <div id="page2" class="page">
                 <h1>A Quick Perspective</h1>
                 <p class="subtitle">A brief reminder of your resilience.</p>
@@ -231,12 +218,68 @@
                 </div>
 
                 <div class="progress-dots">
-                    <div class="dot"></div>
-                    <div class="dot active"></div>
-                    <div class="dot"></div>
+                    <div class="dot" id="dot1"></div>
+                    <div class="dot active" id="dot2"></div>
+                    <div class="dot" id="dot3"></div>
                 </div>
             </div>
 
-            <!-- PAGE 3: INTERACTIVE CLOSING -->
             <div id="page3" class="page">
-                <h1>
+                <h1>Breathe & Reset</h1>
+                <p class="subtitle">Click below whenever you need a quick mental reset.</p>
+                
+                <div class="content-box" style="text-align: center;">
+                    <div id="quoteDisplay" class="interactive-quote">"Peace comes from within. Do not seek it without."</div>
+                    <button class="btn btn-secondary" onclick="generateQuote()" style="font-size: 0.85rem; padding: 8px 16px;">Generate New Thought</button>
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn btn-secondary" onclick="switchPage(2)">← Back</button>
+                    <button class="btn" onclick="switchPage(1)">↺ Restart</button>
+                </div>
+
+                <div class="progress-dots">
+                    <div class="dot" id="dot1"></div>
+                    <div class="dot" id="dot2"></div>
+                    <div class="dot active" id="dot3"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        const quotes = [
+            "“You don't have to see the whole staircase, just take the first step.”",
+            "“Almost everything will work again if you unplug it for a few minutes... including you.”",
+            "“Be gentle with yourself. You are doing the best you can.”",
+            "“This too shall pass. Take a deep breath and exhale the tension.”",
+            "“Your current situation is not your final destination.”"
+        ];
+
+        function switchPage(pageNum) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(p => p.classList.remove('active'));
+            
+            // Show target page
+            const targetPage = document.getElementById('page' + pageNum);
+            if (targetPage) {
+                targetPage.classList.add('active');
+            }
+        }
+
+        function generateQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            const quoteElem = document.getElementById('quoteDisplay');
+            
+            quoteElem.style.opacity = 0;
+            setTimeout(() => {
+                quoteElem.innerText = quotes[randomIndex];
+                quoteElem.style.opacity = 1;
+            }, 200);
+        }
+    </script>
+
+</body>
+</html>
